@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.telegram-safe-area {
+    width: 100%;
+    padding-top: calc(var(--tg-content-safe-area-inset-top) + var(--tg-safe-area-inset-top));
+    padding-bottom: var(--tg-content-safe-area-inset-bottom);
+}
+
+.telegram-text-color {
+    color: var(--tg-theme-text-color);
+}
+
+.telegram-hint-color {
+    color: var(--tg-theme-hint-color);
+}
+
+.telegram-secondary-bg-color {
+    background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.telegram-section-header-text-color {
+    color: var(--tg-theme-section-header-text-color);
+}
+
+.telegram-section-separator-color {
+    border-color: var(--tg-theme-section-separator-color);
+}
