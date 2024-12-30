@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\SexEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,8 +21,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'surname',
+        'patronymic',
+        'birth_date',
+        'sex',
+        'birth_place',
     ];
 
     /**
@@ -29,20 +34,18 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    protected function casts()
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'sex' => SexEnum::class,
         ];
+    }
+
+    public function passport(): HasOne
+    {
+        return $this->hasOne(Passport::class);
     }
 }
