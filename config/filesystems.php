@@ -57,6 +57,17 @@ return [
             'throw' => false,
         ],
 
+
+        'questions' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/questions/A_B'),
+        ],
+
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/A_B'),
+        ],
+
     ],
 
     /*
