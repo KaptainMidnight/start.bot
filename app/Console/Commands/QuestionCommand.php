@@ -42,12 +42,12 @@ class QuestionCommand extends Command
                 $title = $ticketQuestion['title'];
                 $ticketNumber = $ticketQuestion['ticket_number'];
                 $ticketCategory = $ticketQuestion['ticket_category'];
-                $image = str($ticketQuestion['image'])->explode('/')[2];
+                $image = str($ticketQuestion['image'])->explode('/')->last();
 
                 if ($image === 'no_image.jpg') {
                     $image = null;
                 } else {
-                    $image = Storage::disk('images')->path($image);
+                    $image = "images/A_B/$image";
                 }
 
                 $questionText = $ticketQuestion['question'];

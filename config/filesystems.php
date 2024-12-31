@@ -66,6 +66,8 @@ return [
         'images' => [
             'driver' => 'local',
             'root' => storage_path('app/public/images/A_B'),
+            'url' => env('APP_URL').'/storage',
+            'serve' => true
         ],
 
     ],

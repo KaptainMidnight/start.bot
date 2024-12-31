@@ -37,6 +37,8 @@ use MoonShine\MenuManager\MenuGroup;
 use MoonShine\MenuManager\MenuItem;
 use App\MoonShine\Resources\UserResource;
 use App\MoonShine\Resources\PassportResource;
+use App\MoonShine\Resources\QuestionResource;
+use App\MoonShine\Resources\AnswerResource;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -55,10 +57,11 @@ final class MoonShineLayout extends AppLayout
                 MenuItem::make('Роли', MoonShineUserRoleResource::class)->icon('key'),
             ])->icon('circle-stack'),
             MenuGroup::make('Пользователи', [
-                MenuItem::make('Ученики', UserResource::class)->icon('academic-cap'),
+                MenuItem::make('Ученики', UserResource::class)->icon('user-group'),
                 MenuDivider::make(),
                 MenuItem::make('Паспорта', PassportResource::class)->icon('document'),
             ])->icon('users'),
+            MenuItem::make('Вопросы', QuestionResource::class)->icon('question-mark-circle'),
         ];
     }
 
